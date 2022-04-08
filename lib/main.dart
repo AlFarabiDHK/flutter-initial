@@ -10,23 +10,45 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.indigo,
-            title: const Text('New Flutter App'),
-          ),
-          body: Center(
-            child: SizedBox(
-              child: Container(
-                child: const Text('Test app'),
-                margin: const EdgeInsets.all(100),
-                padding: const EdgeInsets.all(10),
-                color: Colors.red,
-                height: 100,
-                width: 100,
-              ),
+        home: Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.black,
+              title: const Text('Wordle'),
             ),
-          )),
-    );
+            floatingActionButton: FloatingActionButton(
+              child: const Icon(Icons.add),
+              onPressed: () {
+                print('pressed!');
+              },
+            ),
+            bottomNavigationBar: BottomNavigationBar(
+              items: const <BottomNavigationBarItem>[
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: 'Home',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.search),
+                  label: 'Search',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.settings),
+                  label: 'Settings',
+                ),
+              ],
+            ),
+            drawer: const Drawer(
+              child: Text('Hello'),
+            ))
+
+        // body: Stack(
+        //   children: const [
+        //     Align(
+        //       child: Icon(Icons.verified),
+        //       alignment: Alignment.center,
+        //     )
+        //   ],
+        // ),
+        );
   }
 }
